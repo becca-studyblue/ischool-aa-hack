@@ -2,18 +2,18 @@
   "source": "src",
   "destination": "www",
   "plugins": {
-    
+
     "metalsmith-layouts": {
       "engine": "handlebars",
       "default": "default.html",
       "pattern": "**/*.html"
     },
-    
+
     "metalsmith-ignore": [
       "**/[!index].js",
       "**/[!index].css"
     ],
-    
+
     "metalsmith-browserify": {
       "dest": "www/index.js",
       "entries": ["src/index.js"],
@@ -21,14 +21,14 @@
       "watch": true,
       "transform": ["babelify"]
     },
-    
+
     "metalsmith-with-postcss": {
       "plugins": {
         "postcss-import": {},
         "autoprefixer": {}
       }
     },
-    
+
     "metalsmith-watch": {
       "paths": {
         "${source}/**/*.html": "**/*.html",

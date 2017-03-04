@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "lessc src/style.less www/index.css",
     "start": "metalsmith -c dev.json",
     "build": "metalsmith -c prod.json",
-    "deploy": "npm run build && surge www --domain awebsite.surge.sh"
+    "deploy": "npm run build && surge www --domain nutty-beam.surge.sh"
   },
   "author": "",
   "license": "ISC",
@@ -26,5 +27,8 @@
     "postcss-import": "^9.1.0",
     "surge": "^0.18.0",
     "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "metalsmith-browserify": "^0.2.4"
   }
 }
